@@ -16,7 +16,6 @@
 				opacity: 1;
 			}
 		}
-
 		*{ 
 			padding: 0; margin: 0;
 		}
@@ -56,7 +55,8 @@
 			font-family:Microsoft JhengHei;
 		}
 		nav { 
-			width: 100%; text-align: center; 
+			width: 100%; 
+			text-align: center; 
 		}
 		nav a { 
 			display: block; 
@@ -64,7 +64,8 @@
 			border-bottom: 1px solid #EEE;
 		}
 		nav a:hover { 
-			background: #00AAAA; color: #FFF; 
+			background: #00AAAA; 
+			color: #FFF; 
 		}
 		nav li:last-child a { 
 			border-bottom: none; 
@@ -100,7 +101,7 @@
 		.menu {
 			width: 240px;
 			height: 100%;
-			position: absolute;
+			position: fixed;
 			background: #DDD;
 			left: -240px;
 			transition: all .3s ease-in-out;
@@ -116,28 +117,16 @@
 			cursor: pointer;
 			margin-top: 4px;
 			border-radius: 5px;
-			float: right;
+			position: fixed;
+			z-index: 1
 		}
 		#menuToggle { 
 			display: none; 
 		}
 		#menuToggle:checked ~ .menu { 
-			position: absolute; left: 0; 
+			position: fixed; left: 0; 
 		}
-		/************手機畫面*****************/
-		@media (max-width: 320px) {
-			#brand {
-				font-size: 30px;
-			}
-			.manu{
-				width: 120px;
-			}
-			.manu-icon {
-				width: 20px;
-				height: 10px;
-			}
-		}
-		/**/
+		
 		.actvtTitle {
 			margin-left: 300px;
 			margin-top: 80px;
@@ -216,7 +205,7 @@
 		#content2 {
 			margin-top: 150px;
 			width: 100%;
-			height: 750px;
+			height: 1050px;
 		}
 		#classimg {
 			width: 45%;
@@ -254,140 +243,230 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		footer {
-			width: 100%;
-			height: 50px;
-			margin-top: 50px;
-			background-color: #DDD;
-			text-align: center;
+        /************手機畫面*****************/
+		@media (max-width: 500px) {
+			#bgimg {
+				padding-top: 200px;
+			}
 		}
-		#foot {
-			padding-top: 15px;
-			color: #AAA;
-		/************************************/
+		/*************************************/
+			@media (min-width: 1700px) {
+				#ct1img {
+					height: 900px;
+					width: 100%;
+				}
+				#classimg {
+				margin-top: 300px;
+				}
+				#actvtimg1-1, #actvtimg2-1 {
+					padding-left: 300px;
+				}
+				#actvtimg1-more, #actvtimg2-more {
+					margin-left: 600px;
+				}
+				.actvtTitle {
+					padding-left: 300px;
+				}
+			}
+			@media (min-height: 900px) {
+				#ct1img {
+					height: 1000px;
+				}
+				#classimg {
+					margin-top: 400px; 
+				}
+			}
+		/*************************************/
 		</style>
 	</head>
 	<body>
 		<img id="bgimg" src="http://static.panoramio.com/photos/large/80101519.jpg">
+        <!--背景圖片-->
 		
 		<div id="content1">
-		<div id="ct">
-		<img id="ct1img" src="其他/pic1.JPG">
-		<input type="checkbox" id="menuToggle">
-		<label for="menuToggle" class="menu-icon">&#9776;</label>
-		<nav class="menu">
-			<ul>
-				<li>
-					<a href="#content2">
-					班級課表
-					</a>
-				</li>
-				<li>
-					<a href="#content3">
-					活動照片
-					</a>
-				</li>
-				<li>
-					<a href="#">
-					班級人物
-					</a>
-				</li>
-				<li>
-					<a href="#">
-					課堂五四三
-					</a>
-				</li>
-				<li>
-					<a href="http://ww3.hcjh.tn.edu.tw/joomla/images/files/106.pdf" target="_blank">
-					行事曆
-					</a>
-				</li>
-				<li>
-					<a href="https://goo.gl/7KqPok" target="_blank">
-					粉絲專頁
-					</a>
-				</li>
-				<li>
-					<a href="http://ww3.hcjh.tn.edu.tw" target="_blank">
-					學校首頁
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<header>
-			<div id="brand">後甲106</div>
-		</header>
-	</div>
-	</div>
+		<!--第一頁-->
+			<div id="ct">
+		  		<img id="ct1img" src="其他/pic1.JPG">
+				<!--第一頁的背景圖片-->
+				
+		  		<input type="checkbox" id="menuToggle">
+		  		<label for="menuToggle" class="menu-icon">&#9776;</label>
+				<!--漢堡開關-->
+				
+				<nav class="menu">
+				<!--漢堡-->
+					
+					<ul>
+						<li>
+							<a href="#content2">
+								班級課表
+							</a>
+						</li>
+						<li>
+							<a href="#content3">
+								活動照片
+							</a>
+						</li>
+						<li>
+                      		<a href="#">
+                          		班級人物
+                      		</a>
+                  		</li>
+                  		<li>
+                      		<a href="#">
+                          		課堂五四三
+                      		</a>
+                  		</li>
+                  		<li>
+                      		<a href="http://ww3.hcjh.tn.edu.tw/joomla/images/files/106.pdf" target="_blank">
+                          		行事曆
+                      		</a>
+                  		</li>
+                  		<li>
+                      		<a href="https://goo.gl/7KqPok" target="_blank">
+								粉絲專頁
+                  			</a>
+                  		</li>
+                  		<li>
+							<a href="http://ww3.hcjh.tn.edu.tw" target="_blank">
+                          		學校首頁
+                  			</a>
+                  		</li>
+					</ul>
+				<!--結束漢堡-->
+				</nav>
+				
+				<header>
+					<div id="brand">
+                		後甲106
+					<!--第一頁大標題-->
+            		</div>
+				</header>
+			
+			<!--結束#ct-->	
+			</div>
+		<!--結束#content1-->
+		</div>
+
+		<div id="content2">
+		<!--第二頁-->
+			
+			<div id="classtitle">
+				課表
+			</div>
+			<!--第二頁大標題-->	
+			
+			<a href="http://www.hcjh.tn.edu.tw/classtable/classTable.asp" target="_blank" >
+			<!--課表連結-->
+				<img src="其他/課表.jpg" id="classimg">
+				<!--課表-->
+			</a>
+			
+		<!--結束第二頁-->	
+		</div>
 
 
-	<div id="content2">
-		<div id="classtitle">課表</div>
-		<a href="http://www.hcjh.tn.edu.tw/classtable/classTable.asp" target="_blank" ><img src="其他/課表.jpg" id="classimg"></a>
-	</div>
-
-
-	<div id="content3">
-	
-	<div id="ct3head">班級活動記事與相片</div>
+		<div id="content3">
+		<!--第三頁-->
+			
+			<div id="ct3head">
+				<!--第三頁大標題-->
+				班級活動記事與相片
+			</div>
+			
 			<div class="actvtTitle" id="actvt1">
-		班會
-	</div>
-	<div class="actvtimg1-all">
-	<a href="https://i.imgur.com/1pqBhEr.jpg" target="_black"><img id="actvtimg1-1" src="https://preview.ibb.co/g1sAY6/1508759758173.jpg"></a>
-	<a href="https://i.imgur.com/1aOS78O.jpg" target="_black"><img id="actvtimg1-2" src="https://preview.ibb.co/hdEqY6/1508759763050.jpg"></a>
-	<a href="https://i.imgur.com/I0rzfuz.jpg" target="_black"><img id="actvtimg1-3" src="https://preview.ibb.co/iSL8Lm/1508759765191.jpg"></a>
-	<a href="https://i.imgur.com/PicPpop.jpg" target="_black"><img id="actvtimg1-4" src="https://preview.ibb.co/gRved6/1508759768160.jpg"></a>
-	<a href="https://i.imgur.com/D6o5Fo8.jpg" target="_black"><img id="actvtimg1-5" src="https://preview.ibb.co/fTaed6/1508759770869.jpg"></a>
-	<a href="https://imgur.com/a/h3aLB" target="_blank"><div id="actvtimg1-more"><p id="at1more" target="_black">更多</p></div></a>
-	</div>
-	<div class="actvtTitle" id="actvt2">
-        法國人
-	</div>
-	<a href="https://i.imgur.com/BpdH7jM.jpg" target="_blank"><img id="actvtimg2-1" src="https://preview.ibb.co/dxmnY6/DSC08548.jpg"></a>
-	<a href="https://i.imgur.com/ktWi3C1.jpg" target="_blank"><img id="actvtimg2-2" src="https://preview.ibb.co/c9bRRR/DSC08550.jpg"></a>
-	<a href="https://i.imgur.com/S72jYLm.jpg" target="_blank"><img id="actvtimg2-3" src="https://preview.ibb.co/mYMAmR/DSC08551.jpg"></a>
-	<a href="https://i.imgur.com/dM8TXCG.jpg" target="_blank"><img id="actvtimg2-4" src="https://preview.ibb.co/crZkLm/DSC08552.jpg"></a>
-	<a href="https://i.imgur.com/8KahgSQ.jpg" target="_blank"><img id="actvtimg2-5" src="https://preview.ibb.co/b220mR/DSC08553.jpg"></a>
-	<a href="https://i.imgur.com/a/EvGGp.jpg" target="_blank"><div id="actvtimg2-more"><p id="at2more">更多</p></div></a>
-
+			<!--第一個活動標題-->
+				班會
+			</div>
+			
+			<div class="actvtimg1-all">
+			<!--第一個活動照片-->
+				
+				<a href="https://i.imgur.com/1pqBhEr.jpg" target="_black"><!--1-1張-->
+					<img id="actvtimg1-1" src="https://preview.ibb.co/g1sAY6/1508759758173.jpg">
+				</a>
+				
+				<a href="https://i.imgur.com/1aOS78O.jpg" target="_black"><!--1-2-->
+					<img id="actvtimg1-2" src="https://preview.ibb.co/hdEqY6/1508759763050.jpg">
+				</a>
+				
+				<a href="https://i.imgur.com/I0rzfuz.jpg" target="_black"><!--1-3-->
+					<img id="actvtimg1-3" src="https://preview.ibb.co/iSL8Lm/1508759765191.jpg">
+				</a>
+				
+				<a href="https://i.imgur.com/PicPpop.jpg" target="_black"><!--1-4-->
+					<img id="actvtimg1-4" src="https://preview.ibb.co/gRved6/1508759768160.jpg">
+				</a>
+				
+				<a href="https://i.imgur.com/D6o5Fo8.jpg" target="_black"><!--1-5-->
+					<img id="actvtimg1-5" src="https://preview.ibb.co/fTaed6/1508759770869.jpg">
+				</a>
+				
+				<a href="https://imgur.com/a/h3aLB" target="_blank"><!--1-more-->
+					<div id="actvtimg1-more">
+						<p id="at1more" target="_black">
+							更多
+						</p>
+					</div>
+				</a>
+			<!--結束.actvtimg1-all-->	
+			</div>
 	
-	</div>
-		<footer>
-	    <div id="foot">&copy;copyright houjia 10603
-	    </div>
-	</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
-<script type="text/javascript">
-	$(function() {
-  		$('a[href=#content2]').click(function() {
-    			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-					var target = $(this.hash);
-      				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      				if (target.length) {
-        				$('html,body').animate({
-          					scrollTop: target.offset().top
-        				}, 1000);
-        			return false;
-     		 		}
-    			}
-  		});
-	});
-	/****************************/
-	$(function() {
-  		$('a[href=#content3]').click(function() {
-    			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-					var target = $(this.hash);
-      				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      				if (target.length) {
-        				$('html,body').animate({
-          					scrollTop: target.offset().top
-        				}, 1000);
-        			return false;
-     		 		}
-    			}
-  		});
-	});
-</script>
+			<div class="actvtTitle" id="actvt2">
+			<!--第二個活動標題-->
+        		法國人
+			</div>
+				<a href="https://i.imgur.com/BpdH7jM.jpg" target="_blank">
+					<img id="actvtimg2-1" src="https://preview.ibb.co/dxmnY6/DSC08548.jpg">
+				</a>	
+				<a href="https://i.imgur.com/ktWi3C1.jpg" target="_blank">
+					<img id="actvtimg2-2" src="https://preview.ibb.co/c9bRRR/DSC08550.jpg">
+				</a>	
+				<a href="https://i.imgur.com/S72jYLm.jpg" target="_blank">
+					<img id="actvtimg2-3" src="https://preview.ibb.co/mYMAmR/DSC08551.jpg">
+				</a>	
+				<a href="https://i.imgur.com/dM8TXCG.jpg" target="_blank">
+					<img id="actvtimg2-4" src="https://preview.ibb.co/crZkLm/DSC08552.jpg">
+				</a>	
+				<a href="https://i.imgur.com/8KahgSQ.jpg" target="_blank">
+					<img id="actvtimg2-5" src="https://preview.ibb.co/b220mR/DSC08553.jpg">
+				</a>	
+				<a href="https://i.imgur.com/a/EvGGp.jpg" target="_blank">
+					<div id="actvtimg2-more">
+						<p id="at2more">
+							更多
+						</p>
+					</div>
+				</a>
+			<div class="actvtTitle" id="actvt3">
+			<!--第三個活動標題-->
+        		106校慶
+			</div>
+				<a href="https://i.imgur.com/5Sghv6T.jpg" target="_blank">
+					<img id="actvtimg2-1" src="https://i.imgur.com/5Sghv6T.jpg">
+				</a>	
+				<a href="https://i.imgur.com/Hv2FdF1.jpg" target="_blank">
+					<img id="actvtimg2-2" src="https://i.imgur.com/Hv2FdF1.jpg">
+				</a>	
+				<a href="https://i.imgur.com/sb3suod.jpg" target="_blank">
+					<img id="actvtimg2-3" src="https://i.imgur.com/sb3suod.jpg" >
+				</a>	
+				<a href="https://i.imgur.com/Q9HBKy2.jpg" target="_blank">
+					<img id="actvtimg2-4" src="https://i.imgur.com/Q9HBKy2.jpg">
+				</a>	
+				<a href="https://i.imgur.com/EpjkBTj.jpg" target="_blank">
+					<img id="actvtimg2-5" src="https://i.imgur.com/EpjkBTj.jpg">
+				</a>	
+				<a href="https://imgur.com/a/06RSd" target="_blank">
+					<div id="actvtimg2-more">
+						<p id="at2more">
+							更多
+						</p>
+					</div>
+				</a>
+			
+		<!--結束#content3-->
+		</div>
+		
 	</body>
 </html>
