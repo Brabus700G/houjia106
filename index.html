@@ -176,8 +176,8 @@
 		    background-color: #000000;
 		    color: #ffffff;
 		    width: 100px;
-		    height: 100px;	
-           	    margin-left: 300px;
+			height: 100px;	
+            margin-left: 300px;
 		}
 		#actvtimg2-5 {
 			margin-left: 15px;
@@ -198,7 +198,7 @@
 		#ct1img {
 			overflow: hidden;
 			width: 100%;
-			height: auto;
+			height: 750px;
 			position: absolute;
 			z-index: -49;
 		}
@@ -243,10 +243,10 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		/************手機畫面*****************/
+        /************手機畫面*****************/
 		@media (max-width: 500px) {
 			#bgimg {
-				margin-top: 300px;
+				padding-top: 200px;
 			}
 		}
 		/*************************************/
@@ -280,7 +280,7 @@
 		</style>
 	</head>
 	<body>
-		<img id="bgimg" src="其他/校門.jpg">
+		<img id="bgimg" src="http://static.panoramio.com/photos/large/80101519.jpg">
         <!--背景圖片-->
 		
 		<div id="content1">
@@ -298,12 +298,12 @@
 					
 					<ul>
 						<li>
-							<a href="#content2">
+							<a href="#content2" id="btn1">
 								班級課表
 							</a>
 						</li>
 						<li>
-							<a href="#content3">
+							<a href="#content3" id="btn2">
 								活動照片
 							</a>
 						</li>
@@ -467,6 +467,20 @@
 			
 		<!--結束#content3-->
 		</div>
-		
+		<script src="jquery.min.js" language="javascript"></script>
+		<script>
+			$(function(){
+				$('#btn1').click(function(){
+					$('html,body').animate({
+						scrollTop:$('#content2').offset().top
+					}, 800);
+				});
+				$('#btn2').click(function(){
+					$('html,body').animate({
+						scrollTop:$('#content3').offset().top
+					}, 800);
+				});
+			});
+		</script>
 	</body>
 </html>
